@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import NavigationMenu from "@/components/Navbar";
 import { Finlandica } from "next/font/google";
+import Head from "next/head";
 
 const finlandica = Finlandica({
   subsets: ["latin"],
@@ -13,6 +14,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname();
   return (
     <>
+      <Head>
+        <title>The Debating Society</title>
+        <link rel="shortcut icon" href="favicon.png" />
+      </Head>
       <style jsx global>{`
         html {
           font-family: ${finlandica.style.fontFamily};
